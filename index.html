@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فلسطين</title>
+  <link rel="icon" type="image/png" href="1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Amiri', serif;
+      background-image: url('2.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      color: #333;
+    }
+
+    header {
+      background-color: rgba(0, 105, 92, 0.9);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 60px;
+      height: auto;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+
+    nav {
+      background-color: rgba(0, 121, 107, 0.9);
+      padding: 10px;
+      text-align: center;
+    }
+
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .info-button {
+      width: 180px;
+      height: 180px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #fff;
+      background-color: #004d40;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-button img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    .info-button span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .info-block {
+      background-color: rgba(255, 255, 255, 0.98);
+      border-radius: 12px;
+      padding: 40px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      font-size: 2em;
+      line-height: 1.8;
+    }
+
+    .info-block h2 {
+      color: #004d40;
+      font-size: 2.2em;
+      border-bottom: 2px solid #004d40;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    #goTopBtn {
+  margin-top: 40px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#goTopBtn:hover {
+  background-color: #004d40;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="1.png" alt="شعار الموقع">
+    <h1>الطعام الفلسطيني والثقافات والمعالم</h1>
+  </header>
+
+  <div class="content">
+    <div class="button-grid">
+      <button class="info-button" onclick="showInfo('jerusalem')">
+        <img src="3.png" alt="القدس">
+        <span>القدس</span>
+      </button>
+      <button class="info-button" onclick="showInfo('aqsa')">
+        <img src="4.png" alt="المسجد الأقصى">
+        <span>المسجد الأقصى</span>
+      </button>
+      <button class="info-button" onclick="showInfo('rock')">
+        <img src="5.png" alt="قبة الصخرة">
+        <span>قبة الصخرة</span>
+      </button>
+      <button class="info-button" onclick="showInfo('wall')">
+        <img src="6.png" alt="الحائط الغربي">
+        <span>الحائط الغربي</span>
+      </button>
+      <button class="info-button" onclick="showInfo('bethlehem')">
+        <img src="8.png" alt="بيت لحم">
+        <span>بيت لحم</span>
+      </button>
+      <button class="info-button" onclick="showInfo('hebron')">
+        <img src="9.png" alt="الخليل">
+        <span>الخليل</span>
+      </button>
+      <button class="info-button" onclick="showInfo('haifa')">
+        <img src="10.png" alt="حيفا">
+        <span>حيفا</span>
+      </button>
+      <button class="info-button" onclick="showInfo('nablus')">
+        <img src="11.png" alt="نابلس">
+        <span>نابلس</span>
+      </button>
+      <button class="info-button" onclick="showInfo('akka')">
+        <img src="12.png" alt="عكا">
+        <span>عكا</span>
+      </button>
+      <button class="info-button" onclick="showInfo('food')">
+        <img src="15.png" alt="الطعام الفلسطيني">
+        <span>الطعام الفلسطيني</span>
+      </button>
+      <button class="info-button" onclick="showInfo('tatreez')">
+        <img src="13.png" alt="التطريز الفلسطيني">
+        <span>التطريز</span>
+      </button>
+      <button class="info-button" onclick="showInfo('crafts')">
+        <img src="16.png" alt="الحرف اليدوية">
+        <span>الحرف اليدوية</span>
+      </button>
+    </div>
+
+    <div id="info" class="info-block">
+      <div id="info-content"></div>
+    </div>
+
+   <button id="goTopBtn" onclick="scrollToTop()">اذهب إلى الأعلى ↑</button>
+
+  </div>
+
+  <script>
+    const infoData = {
+      jerusalem: `<h2>القدس </h2><p>القدس هي العاصمة التاريخية لفلسطين. تضم معالم دينية بارزة مثل المسجد الأقصى، قبة الصخرة، وكنيسة القيامة. تتميز بأزقتها القديمة والأسوار التاريخية والأسواق التراثية.</p>`,
+      aqsa: `<h2>المسجد الأقصى </h2><p>أولى القبلتين وثالث الحرمين الشريفين. يمثل رمزاً دينياً مهماً ويقع في قلب البلدة القديمة بالقدس. يتميز بمساحته الواسعة وقبابه الجميلة.</p>`,
+      rock: `<h2>قبة الصخرة </h2><p>تقع في وسط المسجد الأقصى وتُعرف بقبتها الذهبية البارزة. بُنيت في عهد الخليفة عبد الملك بن مروان وتعد من أروع نماذج العمارة الإسلامية.</p>`,
+      wall: `<h2>الحائط الغربي </h2><p>يعرف أيضًا بحائط البراق ويقع بجوار المسجد الأقصى. يُعتبر مكاناً مقدساً لدى اليهود وله أهمية دينية وتاريخية عند المسلمين.</p>`,
+      bethlehem: `<h2>بيت لحم</h2><p>مدينة مقدسة للمسيحيين حيث ولد السيد المسيح. تضم كنيسة المهد وتستقبل الزوار من كافة أنحاء العالم، وتعد من أبرز المعالم الدينية في فلسطين.</p>`,
+      haifa: `<h2>حيفا</h2><p>مدينة ساحلية تقع على جبل الكرمل. تشتهر بالحدائق البهائية ومينائها الكبير، وتتميز بتنوعها الثقافي والديني.</p>`,
+      akka: `<h2>عكا</h2><p>مدينة ساحلية ذات طابع تاريخي. تتميز بالأسوار العثمانية والميناء القديم، وتحمل طابعًا عربيًا أصيلاً بمبانيها وأسواقها.</p>`,
+           food: `<h2>الطعام الفلسطيني</h2><p>يشمل المقلوبة، المسخن، المجدرة، الكبة، الكنافة، الزعتر، والخبز البلدي. يُعتبر جزءاً لا يتجزأ من الهوية الثقافية، ويُقدم في المناسبات الاجتماعية والدينية.</p>`,
+      nablus: `<h2>نابلس</h2><p>تُعرف نابلس بمدينة الكنافة وتُعد من أقدم المدن في فلسطين. تشتهر بصناعاتها التقليدية مثل الصابون النابلسي وحلوياتها، وتحيط بها جبال جرزيم وعيبال.</p>`
+
+    };
+
+    function showInfo(key) {
+      const infoDiv = document.getElementById('info-content');
+      infoDiv.innerHTML = infoData[key] || '<p>لا توجد معلومات متاحة.</p>';
+      document.getElementById('info').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+  </script>
+</body>
+</html>
+
